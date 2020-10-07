@@ -61,14 +61,10 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col align-content-center"><h1>Palindrome Challenge</h1></div>
+                <div class="col align-content-center text-primary"><em><h1>Palindrome Challenge</h1></em></div>
                 <div class="col align-items-md-center"></div>
-                <p class="lead">A palindrome is a word, phrase, number or sequence of words that reads the same backward as forward. Punctuation and spaces between the words or lettering is allowed.</p>
-                <p>The most common of English palindromes are those that are read character by character, for instance, "level," "rotor," and "racecar". Character by character means that each character of the word matches and the word can be spelled the same forwards or backward. The word palindrome is derived from the Greek 'palin,' or "back" and 'dromos' or "direction." The actual Greek phrase alluded to the backward movement of the crab.</p>
-                <ul class="list-unstyled">
-                    <li>This page is a Javascript exercise designed to develop the ability to work with data and detect hidden patterns.</li>
-                    <li>Specifically, this code evaluates whether a given set of data (letters, numbers, or combination) has the same sequence whether it is read right-left or left-right.</li>
-                </ul>
+                <p class="text-dark">A <strong>palindrome</strong> is a word, phrase, number or sequence of words that reads the same whether one reads it forward (left-to-right) or backwards (right-to-left). The most common of English palindromes are those that are read character by character, for instance, "Mom", "level," "rotor," and "racecar". Character by character means that each character of the word matches and the word can be spelled the same forwards or backward. The word palindrome is derived from the Greek 'palin,' or "back" and 'dromos' or "direction." The actual Greek phrase alluded to the backward movement of the crab.</p>
+                <p class="text-dark">This page is a Javascript exercise designed to develop the ability to work with data and detect hidden patterns. Specifically, this code evaluates whether a given set of data (letters, numbers, or combination) has the same sequence whether it is read right-left or left-right.</p>
             </div>
         </div>
     </section>
@@ -76,90 +72,40 @@
     <section>
         <div class="container">
             <div class="row text-left">
-                <div class="col-md-8"><input type="text" class="form-control" id="input1"></div>
-                <div class="col-md-6"><lable for="button">Try it!:</ label></div>
-                <div class="col-md-6"><button onclick="inputWord" class="btn btn-outline-primary" id="Submit-btn">Submit</button></div>
+                <div class="col-md-8"><input type="text" class="form-control" id="inputWord"></div>
+                <div class="col-md-6"><lable for="button" class="text-primary"><h3>Try It!</h3></ label></div>
+                <div class="col-md-6"><button onclick="inputWord" class="btn btn-primary" id="submit-btn">Submit</button></div>
                 <br />
-                <div class="row">
-                    <div class="col-md-8">The answer is: <span id="reverseOutput"></span></div>
-                </div>
             </div>
         </div>
     </section>
     <hr />
 
-    <!-- The Modal 1 Win-->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Palindrome Win!</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Your word/number sequence is a palindrome.
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- The Modal 2 Win-->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Try Another Sequence</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Your word/number sequence is not a palindrome.
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         //My comments for the Palindrome Challenge:
-        //Receive the String and scrub out junk.
-        //Step 1
-        let inputWord = document.getElementById("reverseString").value;
-        let lowerInput = inputWord.toLowerCase();
-
-        if (!reverseString.prototype.trim) {
-            reverseString.prototype.trim = function () {
-                return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-            };
+        //String capture, scrub and reverse function.
+        function flipSplit(inputWord) {
+            let flip = inputWord.split("").reverse().join("");
+            return flip;
         }
 
-        //Step 2
-        //Take the scrubbed String and reverse it to evaluate whether it is a palindrome.
-        let reverseWord = ""
-        for (let loop = inputWord.length - 1; loop >= 0; loop--) {
-            reverseWord += lowerInput.charAt(loop);
-        }
-        //Step 3
+        //Button event.
+        document.getElementById("submit-btn").addEventListener('click', function () {
+            let inputWord = document.getElementById("inputWord").value;
+            let modifiedWord = inputWord.toLowerCase();
+            var reverseWord = flipSplit(modifiedWord);
+
         //Print the reversed String and post confirmation or encouragement post.
-        if (inputWord == reverseWord) {
+        if (modifiedWord == reverseWord) {
             alert("Palindrome Win");
+            document.getElementById("Palindrome Win!").innerHTML = reverseWord;
         }
         else {
             alert("Try Another Sequence");
         }
         document.getElementById("reverseOutput").innerHTML = reverseWord;
 
-        })
+        });
 
     </script>
 
@@ -168,7 +114,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
 
 </body>>
