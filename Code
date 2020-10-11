@@ -1,0 +1,26 @@
+﻿<script>//My comments for the Palindrome Challenge:
+        //String capture, scrub and reverse function.
+        function flipSplit(inputWord) {
+            let flip = inputWord.split("").reverse().join("");
+            return flip;
+        }
+
+        //Button event.
+        document.getElementById("submit-btn").addEventListener('click', function () {
+            let inputWord = document.getElementById("inputWord").value;
+            let modifiedWord = inputWord.toLowerCase();
+            var reverseWord = flipSplit(modifiedWord);
+
+        //Print the reversed String and post confirmation or encouragement post.
+        if (modifiedWord == reverseWord) {
+            alert("Palindrome Win");
+            document.getElementById("Palindrome Win!").innerHTML = reverseWord;
+        }
+        else {
+            alert("Try Another Sequence");
+        }
+        document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+        });
+
+</script>
