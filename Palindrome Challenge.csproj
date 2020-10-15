@@ -78,6 +78,7 @@
     <Content Include="Images\bg1.png" />
     <Content Include="Images\favicon-32x32.png" />
     <Content Include="Images\OJOlmo.jpg" />
+    <Content Include="Solve.html" />
     <Content Include="index.html" />
     <Content Include="README.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
