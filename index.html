@@ -24,7 +24,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent static-top">
         <div class="container">
             <a><img class="navbar-brand" src="Images/favicon-32x32.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,9 +50,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="//ojolmo-fs-portfolio.netlify.app">Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog Post</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -61,26 +58,20 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col align-content-center text-primary"><em><h1>Palindrome Challenge</h1></em></div>
+                <div class="col align-content-center text-primary"><h1>Palindrome Challenge</h1></div>
+                <hr />
                 <div class="col align-items-md-center"></div>
-                <p class="text-dark">A <strong>palindrome</strong> is a word, phrase, number or sequence of words that reads the same whether one reads it forward (left-to-right) or backwards (right-to-left). The most common of English palindromes are those that are read character by character, for instance, "Mom", "level," "rotor," and "racecar". Character by character means that each character of the word matches and the word can be spelled the same forwards or backward. The word palindrome is derived from the Greek 'palin,' or "back" and 'dromos' or "direction." The actual Greek phrase alluded to the backward movement of the crab.</p>
+                   
+                <p class="text-dark">
+                    A <strong>palindrome</strong> is a word, phrase, number or sequence of words that reads the same whether one reads it forward (left-to-right) or backwards (right-to-left). The most common of English palindromes are those that are read character by character, for instance, "Mom", "level," "rotor," and "racecar".
+                    Character by character means that each character of the word matches and the word can be spelled the same forwards or backward. The word palindrome is derived from the Greek 'palin,' or "back" and 'dromos' or "direction." The actual Greek phrase alluded to the backward movement of the crab.
+                </p>
                 <p class="text-dark">This page is a Javascript exercise designed to develop the ability to work with data and detect hidden patterns. Specifically, this code evaluates whether a given set of data (letters, numbers, or combination) has the same sequence whether it is read right-left or left-right.</p>
             </div>
         </div>
     </section>
     <hr />
-    <section>
-        <div class="container">
-            <div class="row text-left">
-                <div class="col-md-8"><input type="text" class="form-control" id="inputWord"></div>
-                <div class="col-md-4"><lable for="button" class="text-primary"><h3>Try It!</h3></ label></div>
-                <div class="col-md-4"><button onclick="inputWord" class="btn btn-outline-primary" id="submit-btn">Submit</button></div>
-                <div class="col-md-4"><button type="button" onclick="Clear()" class="btn btn-outline-danger btn elWide" id="clear">Clear</button></div>
-                <br />
-            </div>
-        </div>
-    </section>
-    <hr />
+ 
 
     <script>
         //My comments for the Palindrome Challenge:
