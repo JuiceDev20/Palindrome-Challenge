@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="String Manipulation with JS" content="">
+    <meta name="author" content="O J Olmo">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Palindrome Challenge</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/starter-template.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <link href="Content/prism-css.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent static-top">
+        <div class="container">
+            <a><img class="navbar-brand" src="Images/favicon-32x32.png" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Index.html" />
+
+                        Home
+                        <a href="#" Portfolio />
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Solve.html">Solve</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//ojolmo-fs-portfolio.netlify.app">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col align-content-center text-primary">
+                    <h1>Palindrome Challenge</h1>
+                </div>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col-9">
+                    <pre class="line-numbers language-js">
+                        <code class="language-js">
+    //My comments for the Palindrome Challenge:
+    //String capture, scrub and reverse function.
+    function flipSplit(inputWord) {
+        let flip = inputWord.split("").reverse().join("");
+        return flip;
+    }
+    //Clear button
+    function Clear() {
+        document.getElementById("inputWord").value = "";
+    }
+    //Button event.
+    document.getElementById("submit-btn").addEventListener('click', function () {
+        let inputWord = document.getElementById("inputWord").value;
+        let modifiedWord = inputWord.toLowerCase();
+        var reverseWord = flipSplit(modifiedWord);
+        //Print the reversed String and post confirmation or encouragement post.
+        if (modifiedWord == reverseWord) {
+            alert("Palindrome Win");
+            document.getElementById("Palindrome Win!").innerHTML = reverseWord;
+        }
+        else {
+            alert("Try Another Sequence");
+        }
+        document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+    });
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <hr />
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="Scripts/prism-js.js"></script>
+</body>>
+
+
+</html>
